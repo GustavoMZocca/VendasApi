@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Vendas</title>
+</head>
+<body>
+
+<div style="margin:100px;">
+ 
+ 	<h1>Vendas</h1>
+ 	
+ 	<div style="float:left;">	
+		<h2>Gerar venda</h2>	
+		<form action"formVenda" style="width: 320px;">	
+			<div style="float:right;"><label>Nome vendedor  </label><input type="text" name="vendedor_nome" id="vendedor_nome"></div>
+			<br><br>
+			<div style="float:right;"><label>Valor  </label><input type="text" name="valor_venda" id="valor_venda"></div>
+			<br>
+			<br>
+			<div style="float:right;"><label>Data venda  </label><input type="text" name="data_venda" id="data_venda"></div>
+			<input type="hidden" name="id_venda" id="">
+			<input type="hidden" name="id_vendedor" id="">
+			<br><br>
+			<input type="submit" value="Enviar" style="margin-left:275px;">	
+		</form>		
+	</div>
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+		
+	<div>		
+		<h2>Lista de vendas</h2> 			
+		<div>
+			<p>
+				<strong>Vendedor:</strong>  João Santos  
+				<strong>Total de vendas do vendedor:</strong> 1245  
+				<strong>Média de vendas diária:</strong> 46 
+				<strong>Data venda:</strong> 01/06/2021 
+			</p>
+			<hr>
+		</div>	
+	</div>
+	
+</div>
+
+	
+</body>
+</html>

@@ -9,7 +9,7 @@ public class IndexController {
 	@RequestMapping("/")
 	public String index() {
 		System.out.println("Método index foi chamado");
-		return "home";
+		return "vendas";
 	} 
 
 }

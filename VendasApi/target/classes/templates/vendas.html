@@ -12,7 +12,14 @@
  	<div style="float:left;">	
 		<h2>Gerar venda</h2>	
 		<form action="cadastrar-venda/" method="POST" style="width: 320px;">	
-			<div style="float:right;"><label>Nome vendedor  </label><input type="text" name="vendedor_nome" id="vendedor_nome" value="" required></div>
+			<div style="float:right;"><label>Nome vendedor</label>
+				<select name="vendedor_nome" id="vendedor_nome" required>
+					<option>Selecionar</option>				    
+				    <option value="Márcio Silva">Márcio Silva</option>
+            		<option value="José Souza">José Souza</option>
+            		<option value="Maria Diniz">Maria Diniz</option>
+				</select>
+			</div>
 			<br><br>
 			<div style="float:right;"><label>Valor  </label><input type="text" name="valor_venda" id="valor_venda" value="" required></div>
 			<br>
@@ -26,14 +33,29 @@
 	<br><br><br><br><br><br><br><br><br><br><br><br>
 		
 	<div>		
-		<h2>Lista de vendas</h2> 			
+		<h2>Lista de vendas</h2>
+		<div><label>Filtrar por período</label>
+			<select name="periodo" id="periodor">				    
+				<option value="01">Janeiro</option>
+				<option value="02">Fevereiro</option>
+				<option value="03">Março</option>
+				<option value="04">Abril</option>
+				<option value="05">Maio</option>
+				<option value="06">Junho</option>
+				<option value="07">Julho</option>
+				<option value="08">Agosto</option>
+				<option value="09">Setembro</option>
+				<option value="10">Outubro</option>
+				<option value="11">Novembro</option>
+				<option value="12">Dezembro</option>
+			</select>
+		</div>
+		<hr> 			
 		<div th:each="vendas:${vendas}">
 			<div class="row">
-				<p><strong>Id venda:</strong> <span th:text="${vendas.id_venda}"></span></p>
-				<p><strong>Id vendedor:</strong> <span th:text="${vendas.id_vendedor}"></span></p>
 				<p><strong>Nome vendedor:</strong> <span th:text="${vendas.vendedor_nome}"></span></p>
-				<p><strong>Valor Venda:</strong> <span th:text="${vendas.valor_venda}"></span></p>
-				<p><strong>Data Venda:</strong> <span th:text="${vendas.data_venda}"></span></p>
+				<p><strong>Média de vendas diária:</strong> <span th:text="${vendas.valor_venda}"></span></p>
+				<p><strong>Total de vendas:</strong> <span th:text="${vendas.valor_venda}"></span></p>
 			</div>
 			<hr>	
 		</div>

@@ -48,13 +48,13 @@ public class Vendas {
 	}
 
 	public void setId_vendedor(String id_vendedor) {
-		this.id_vendedor = "id_vendedor";
+		this.id_vendedor = id_vendedor;
 	}
 
 	public String getVendedor_nome() {
 		return vendedor_nome;
 	}
-
+	
 	public void setVendedor_nome(String vendedor_nome) {
 		this.vendedor_nome = vendedor_nome;
 	}

@@ -7,6 +7,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.vendas.api.models.Vendas;
 
@@ -21,12 +22,15 @@ public class VendasController {
 	@RequestMapping("/cadastrar-venda")
 	public String processForm (Vendas vendas) {
 		VendasRepository.save(vendas);
-		return "redirect:/";
+		return "redirect:/vendas";
 	}
 	
-	@RequestMapping("/listar-vendas")
-	public List<Vendas>listar() {
-		return VendasRepository.findAll();
+	@RequestMapping("/vendas")
+	public ModelAndView ListVendas() {
+		ModelAndView mv = new ModelAndView("/vendas");
+		Iterable<Vendas> vendas = VendasRepository.findAll();
+		mv.addObject("vendas", vendas);
+		return mv;
 	} 
 	
 	

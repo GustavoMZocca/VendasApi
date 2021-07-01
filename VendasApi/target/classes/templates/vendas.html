@@ -5,7 +5,6 @@
 	<title>Vendas</title>
 </head>
 <body>
-
 <div style="margin:100px;">
  
  	<h1>Vendas </h1>
@@ -13,13 +12,12 @@
  	<div style="float:left;">	
 		<h2>Gerar venda</h2>	
 		<form action="cadastrar-venda/" method="POST" style="width: 320px;">	
-			<div style="float:right;"><label>Nome vendedor  </label><input type="text" name="vendedor_nome" id="vendedor_nome" value="123456" required></div>
+			<div style="float:right;"><label>Nome vendedor  </label><input type="text" name="vendedor_nome" id="vendedor_nome" value="" required></div>
 			<br><br>
-			<div style="float:right;"><label>Valor  </label><input type="text" name="valor_venda" id="valor_venda" value="123456" required></div>
+			<div style="float:right;"><label>Valor  </label><input type="text" name="valor_venda" id="valor_venda" value="" required></div>
 			<br>
 			<br>
-			<div style="float:right;"><label>Data venda  </label><input type="text" name="data_venda" id="data_venda" value="123456" required></div>
-			<input type="hidden" name="id_vendedor" id="id_vendedor" value="123456">
+			<div style="float:right;"><label>Data venda  </label><input type="date" name="data_venda" id="data_venda" value="" required></div>
 			<br><br>
 			<input type="submit" value="Enviar" style="margin-left:275px;">	
 		</form>		
@@ -29,19 +27,19 @@
 		
 	<div>		
 		<h2>Lista de vendas</h2> 			
-		<div>
-			<p>
-				<strong>Vendedor:</strong>  João Santos  
-				<strong>Total de vendas do vendedor:</strong> 1245  
-				<strong>Média de vendas diária:</strong> 46 
-				<strong>Data venda:</strong> 01/06/2021 
-			</p>
-			<hr>
-		</div>	
+		<div th:each="vendas:${vendas}">
+			<div class="row">
+				<p><strong>Id venda:</strong> <span th:text="${vendas.id_venda}"></span></p>
+				<p><strong>Id vendedor:</strong> <span th:text="${vendas.id_vendedor}"></span></p>
+				<p><strong>Nome vendedor:</strong> <span th:text="${vendas.vendedor_nome}"></span></p>
+				<p><strong>Valor Venda:</strong> <span th:text="${vendas.valor_venda}"></span></p>
+				<p><strong>Data Venda:</strong> <span th:text="${vendas.data_venda}"></span></p>
+			</div>
+			<hr>	
+		</div>
+			
 	</div>
-	
+		
 </div>
-
-	
 </body>
 </html>

@@ -8,12 +8,16 @@ import javax.persistence.Id;
 public class Vendas {
 
 	@Id
-	@GeneratedValue( strategy = GenerationType.IDENTITY)
-	private Long id_venda;
-	private String data_venda;
-	private String valor_venda;
-	private String id_vendedor;
-	private String vendedor_nome;
+	@GeneratedValue( strategy = GenerationType.AUTO)
+	public Long id_venda;
+		
+	public String data_venda;
+	
+	public String valor_venda;
+	
+	public String id_vendedor;
+	
+	public String vendedor_nome;
 
 	public Long getId_venda() {
 		return id_venda;
@@ -44,7 +48,7 @@ public class Vendas {
 	}
 
 	public void setId_vendedor(String id_vendedor) {
-		this.id_vendedor = id_vendedor;
+		this.id_vendedor = "id_vendedor";
 	}
 
 	public String getVendedor_nome() {

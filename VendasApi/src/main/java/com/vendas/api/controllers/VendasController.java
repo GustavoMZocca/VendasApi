@@ -1,44 +1,34 @@
 package com.vendas.api.controllers;
-
+import com.vendas.api.repository.VendasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.vendas.api.models.Vendas;
 
 import java.util.*;
 
-import com.vendas.api.repository.VendasRepository;
-
-@RestController
-@RequestMapping("/cadastra-venda")
+@Controller
 public class VendasController {
 	
 	@Autowired
-	private VendasRepository vendasRepository;
+	private VendasRepository VendasRepository;
 	
-	@PostMapping
-	public Vendas registrarVenda(@RequestBody Vendas vendas) {	
-		
-		return vendasRepository.save(vendas);
+	@RequestMapping("/cadastrar-venda")
+	public String processForm (Vendas vendas) {
+		VendasRepository.save(vendas);
+		return "redirect:/";
 	}
 	
-	@GetMapping
+	@RequestMapping("/listar-vendas")
 	public List<Vendas>listar() {
-		return vendasRepository.findAll();
+		return VendasRepository.findAll();
 	} 
 	
-	@RequestMapping
-	public String home(Model model) {
-		model.addAttribute("Title", "Teste prático de programação");
-		return "vendas";
-	} 
 	
 	
 }

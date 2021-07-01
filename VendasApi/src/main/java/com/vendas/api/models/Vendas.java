@@ -1,18 +1,25 @@
 package com.vendas.api.models;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class venda {
+@Entity
+public class Vendas {
 
-	private String id_venda;
+	@Id
+	@GeneratedValue( strategy = GenerationType.IDENTITY)
+	private Long id_venda;
 	private String data_venda;
 	private String valor_venda;
 	private String id_vendedor;
 	private String vendedor_nome;
 
-	public String getId_venda() {
+	public Long getId_venda() {
 		return id_venda;
 	}
 
-	public void setId_venda(String id_venda) {
+	public void setId_venda(Long id_venda) {
 		this.id_venda = id_venda;
 	}
 

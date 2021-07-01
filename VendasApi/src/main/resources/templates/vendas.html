@@ -3,6 +3,7 @@
 <head>
 	<meta charSet="utf-8"/>
 	<title>Vendas</title>
+	 <script src="custom.js"></script> 
 </head>
 <body>
 <div style="margin:100px;">
@@ -55,7 +56,7 @@
 			<div class="row">
 				<p><strong>Nome vendedor:</strong> <span th:text="${vendas.vendedor_nome}"></span></p>
 				<p><strong>Média de vendas diária:</strong> <span th:text="${vendas.valor_venda}"></span></p>
-				<p><strong>Total de vendas:</strong> <span th:text="${vendas.valor_venda}"></span></p>
+				<p><strong>Total de vendas:</strong> <span id="totalVendas" th:text="${vendas.valor_venda}"></span></p>
 			</div>
 			<hr>	
 		</div>
